@@ -129,6 +129,20 @@ alias mkdir='mkdir -p'
 
 alias cd..='cd ..'
 
+# git エイリアス
+
+alias ga='git add .'
+alias gc='git commit -m'
+
+alias gb='git branch'
+alias gbd='git branch -d'
+
+alias gco='git checkout'
+alias gcob='git checkout -b'
+
+alias gps='git push'
+alias gpl='git pull'
+
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
 
