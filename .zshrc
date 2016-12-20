@@ -1,15 +1,14 @@
 # 少し凝った zshrc
-# License : MIT
 # http://mollifier.mit-license.org/
+# pureの設定
+autoload -U promptinit; promptinit
+prompt pure
+# License : MIT
 
 ########################################
 # 環境変数
 export LANG=ja_JP.UTF-8
 
-
-# 色を使用出来るようにする
-autoload -Uz colors
-colors
 
 # emacs 風キーバインドにする
 bindkey -e
@@ -22,10 +21,6 @@ SAVEHIST=1000000
 # プロンプト
 # 1行表示
 # PROMPT="%~ %# "
-# 2行表示
-PROMPT="%{${fg[green]}%}[%n@%m]%{${reset_color}%} %~
-%# "
-
 
 # 単語の区切り文字を指定する
 autoload -Uz select-word-style
@@ -55,22 +50,6 @@ zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
 zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
 
 
-########################################
-# vcs_info
-autoload -Uz vcs_info
-autoload -Uz add-zsh-hook
-
-zstyle ':vcs_info:*' formats '%F{green}(%s)-[%b]%f'
-zstyle ':vcs_info:*' actionformats '%F{red}(%s)-[%b|%a]%f'
-
-function _update_vcs_info_msg() {
-    LANG=en_US.UTF-8 vcs_info
-    RPROMPT="${vcs_info_msg_0_}"
-}
-add-zsh-hook precmd _update_vcs_info_msg
-
-
-########################################
 # オプション
 # 日本語ファイル名を表示可能にする
 setopt print_eight_bit
@@ -180,15 +159,3 @@ case ${OSTYPE} in
 esac
 
 # vim:set ft=zsh:
-
-#自分で足した所
-autoload -U compinit
-compinit
-
-export LSCOLORS=exfxcxdxbxegedabagacad
-export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-
-alias ls="ls -GF"
-alias gls="gls --color"
-
-zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
