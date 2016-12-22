@@ -11,6 +11,11 @@ set autoread
 set hidden
 " 入力中のコマンドをステータスに表示する
 set showcmd
+" バックスペース
+set backspace=indent,eol,start
+
+" ハイライト
+syntax on
 
 
 " 見た目系
@@ -19,7 +24,7 @@ set number
 " 現在の行を強調表示
 set cursorline
 " 現在の行を強調表示（縦）
-"set cursorcolumn
+" set cursorcolumn
 " 行末の1文字先までカーソルを移動できるように
 set virtualedit=onemore
 " インデントはスマートインデント
@@ -63,3 +68,4 @@ set hlsearch
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 "自分で追加した所
 set clipboard+=unnamed
+" vim:set ft=vim:
