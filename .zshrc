@@ -105,7 +105,6 @@ bindkey '^R' history-incremental-pattern-search-backward
 alias la='ls -a'
 alias ll='ls -l'
 
-alias cp='cp -i'
 alias mv='mv -i'
 
 alias mkdir='mkdir -p'
@@ -124,6 +123,7 @@ alias gco='git checkout'
 alias gcob='git checkout -b'
 
 alias gps='git push'
+alias gpom='git push origin master'
 alias gpl='git pull'
 
 alias grh='git reset --hard @'
