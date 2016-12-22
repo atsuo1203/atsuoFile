@@ -3,15 +3,19 @@
 # pureの設定
 autoload -U promptinit; promptinit
 prompt pure
-# License : MIT
 
+# zplugの設定
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
+
+zplug "mollifier/anyframe", at:4c23cb60
+zplug "zsh-users/zsh-autosuggestions", defer:2
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+
+zplug load
 ########################################
 # 環境変数
 export LANG=ja_JP.UTF-8
-
-
-# emacs 風キーバインドにする
-bindkey -e
 
 # ヒストリの設定
 HISTFILE=~/.zsh_history
@@ -121,6 +125,8 @@ alias gcob='git checkout -b'
 
 alias gps='git push'
 alias gpl='git pull'
+
+alias grh='git reset --hard @'
 
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
