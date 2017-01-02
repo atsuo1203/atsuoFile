@@ -13,6 +13,15 @@ zplug "zsh-users/zsh-autosuggestions", defer:2
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 zplug load
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+source ~/.nvm/nvm.sh
+
+# node_modules
+#export NODE_PATH= ~/node_modules
+
 ########################################
 # 環境変数
 export LANG=ja_JP.UTF-8
@@ -124,6 +133,7 @@ alias gcob='git checkout -b'
 
 alias gps='git push'
 alias gpom='git push origin master'
+alias gpomf='git push -f origin master'
 alias gpl='git pull'
 
 alias grh='git reset --hard @'
@@ -164,4 +174,7 @@ case ${OSTYPE} in
         ;;
 esac
 
+
+export NVM_DIR="/Users/atsuo/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 # vim:set ft=zsh:
