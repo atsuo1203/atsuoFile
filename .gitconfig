@@ -1,0 +1,18 @@
+[user]
+	name = atsuo1203 
+	email = atsuo@cps.im.dendai.ac.jp
+[core]
+	editor = vim -c \"set fenc=utf-8\"
+	excludefile = /Users/atsuo/.gitignore
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[http]
+	postBuffer = 524288000
+[fetch]
+	prune = true
+[merge]
+	ff = false
+[pull]
+	ff = only
