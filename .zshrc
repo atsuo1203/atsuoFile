@@ -22,6 +22,9 @@ source ~/.nvm/nvm.sh
 # node_modules
 #export NODE_PATH= ~/node_modules
 
+#ruby
+export PATH="$HOME/.rbenv/shims:$PATH"
+eval "$(rbenv init -)"
 ########################################
 # 環境変数
 export LANG=ja_JP.UTF-8
@@ -137,6 +140,7 @@ alias gpomf='git push -f origin master'
 alias gpl='git pull'
 
 alias grh='git reset --hard @'
+alias grhh='git reset --hard @~'
 
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
