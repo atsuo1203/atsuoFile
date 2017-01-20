@@ -2,3 +2,5 @@
 * .zshrc
 * .vimrc
 * .gvimrc
+* .gitconfig
+* .gitignore
