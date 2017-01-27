@@ -4,3 +4,4 @@
 * .gvimrc
 * .gitconfig
 * .gitignore
+* .tigrc
