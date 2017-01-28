@@ -1,1 +1,4 @@
 set main-view = id date author commit-title:graph=yes,refs=yes
+
+bind status + !git commit --amend
+bind status D !@?git checkout HEAD -- %(file)
