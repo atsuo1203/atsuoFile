@@ -4,5 +4,6 @@ bind main c !@?git checkout %(commit)
 bind main C !@zsh -c "echo -n %(commit) | pbcopy"
 bind status + !git commit --amend
 bind status D !@?git checkout HEAD -- %(file)
+bind diff R !git rebase -i %(commit)
 bind main R !git rebase -i %(commit)
 bind main H !@?<git reset --hard %(commit)
