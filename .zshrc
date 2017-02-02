@@ -8,12 +8,15 @@ prompt pure
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
-zplug "mollifier/anyframe", at:4c23cb60
+zplug "mollifier/anyframe"
+zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions", defer:2
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-history-substring-search"
+
+zplug "mrowa44/emojify"
 
 zplug load
-
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
@@ -130,17 +133,21 @@ alias gc='git commit -m'
 
 alias gb='git branch'
 alias gbd='git branch -d'
+alias gbD='git branch -D'
 
 alias gco='git checkout'
 alias gcob='git checkout -b'
 
 alias gps='git push'
 alias gpom='git push origin master'
+alias gpoh='git push origin HEAD'
 alias gpomf='git push -f origin master'
 alias gpl='git pull'
 
 alias grh='git reset --hard @'
-alias grhh='git reset --hard @~'
+alias grh2='git reset --hard @~'
+
+alias grbi='git rebase -i'
 
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
