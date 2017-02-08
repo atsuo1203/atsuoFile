@@ -1,5 +1,4 @@
-# 少し凝った zshrc
-# http://mollifier.mit-license.org/
+# 宏郎のzshrc
 # pureの設定
 autoload -U promptinit; promptinit
 prompt pure
@@ -13,10 +12,15 @@ zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions", defer:2
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-history-substring-search"
-
 zplug "mrowa44/emojify"
 
 zplug load
+
+#pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
@@ -144,7 +148,8 @@ alias gpoh='git push origin HEAD'
 alias gpomf='git push -f origin master'
 alias gpl='git pull'
 
-alias grh='git reset --hard @'
+alias grh='git reset --hard'
+alias grs='git reset --soft'
 alias grh2='git reset --hard @~'
 
 alias grbi='git rebase -i'
