@@ -3,5 +3,5 @@
 * .vimrc
 * .gvimrc
 * .gitconfig
-* .gitignore
+* .gitignore_global
 * .tigrc
