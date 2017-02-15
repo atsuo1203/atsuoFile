@@ -36,6 +36,20 @@ eval "$(rbenv init -)"
 # 環境変数
 export LANG=ja_JP.UTF-8
 
+## peco
+__peco_select_history() {
+    local tac=${commands[tac]:-"tail -r"}
+
+      BUFFER=$(\history -n 1 | \
+          eval $tac | \
+              peco --query "$LBUFFER")
+          CURSOR=$#BUFFER
+              zle reset-prompt
+}
+zle -N __peco_select_history
+
+bindkey '^R' __peco_select_history
+
 # ヒストリの設定
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
@@ -116,7 +130,7 @@ setopt extended_glob
 # キーバインド
 
 # ^R で履歴検索をするときに * でワイルドカードを使用出来るようにする
-bindkey '^R' history-incremental-pattern-search-backward
+# bindkey '^R' history-incremental-pattern-search-backward
 
 ########################################
 # エイリアス
@@ -154,6 +168,13 @@ alias grh2='git reset --hard @~'
 
 alias grbi='git rebase -i'
 
+
+# python alias
+alias pyrn='python manage.py runserver 0.0.0.0:8080'
+alias pymake='python manage.py makemigrations '
+alias pymakeg='python manage.py makemigrations general'
+alias pymig='python manage.py migrate'
+alias pycsu='python manage.py createsuperuser'
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
 
