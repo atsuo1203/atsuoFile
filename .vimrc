@@ -16,6 +16,8 @@ set backspace=indent,eol,start
 
 " ハイライト
 syntax on
+" insertモード中にctrl+Jで、escを押したことにする
+imap <C-j> <esc>
 
 
 " 見た目系
