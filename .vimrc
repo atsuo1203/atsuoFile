@@ -18,6 +18,8 @@ set backspace=indent,eol,start
 syntax on
 " insertモード中にctrl+Jで、escを押したことにする
 imap <C-j> <esc>
+" normalモード中に-を押すと行末に移動
+nmap - $
 
 
 " 見た目系
@@ -45,8 +47,6 @@ nnoremap k gk
 " Tab系
 " 不可視文字を可視化(タブが「▸-」と表示される)
 set list listchars=tab:\▸\-
-" Tab文字を半角スペースにする
-set expandtab
 " 行頭以外のTab文字の表示幅（スペースいくつ分）
 set tabstop=2
 " 行頭でのTab文字の表示幅
