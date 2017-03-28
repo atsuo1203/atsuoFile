@@ -20,6 +20,8 @@ syntax on
 imap <C-j> <esc>
 " normalモード中に-を押すと行末に移動
 nmap - $
+" vitualモード中にctrl+Jで、escを押したことにする
+vmap <C-j> <esc>
 
 
 " 見た目系
