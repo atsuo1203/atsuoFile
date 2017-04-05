@@ -2,6 +2,8 @@
 set clipboard+=unnamed
 set clipboard=unnamed
 
+set surround
+
 " ハイライト
 syntax on
 " insertモード中にctrl+Jで、escを押したことにする
