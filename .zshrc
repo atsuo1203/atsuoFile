@@ -16,6 +16,9 @@ zplug "mrowa44/emojify"
 
 zplug load
 
+# javaの環境設定
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+
 #pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
