@@ -41,23 +41,32 @@ eval "$(rbenv init -)"
 export LANG=ja_JP.UTF-8
 
 ## peco
-__peco_select_history() {
-    local tac=${commands[tac]:-"tail -r"}
-
-      BUFFER=$(\history -n 1 | \
-          eval $tac | \
-              peco --query "$LBUFFER")
-          CURSOR=$#BUFFER
-              zle reset-prompt
+function peco-select-history() {
+    local tac
+    if which tac > /dev/null; then
+        tac="tac"
+    else
+        tac="tail -r"
+    fi
+    BUFFER=$(history -n 1 | eval $tac | awk '!a[$0]++' | peco --query "$LBUFFER")
+    CURSOR=$#BUFFER
+    # zle clear-screen
 }
-zle -N __peco_select_history
+zle -N peco-select-history
 
-bindkey '^R' __peco_select_history
+bindkey '^R' peco-select-history
 
 # ヒストリの設定
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
+setopt HIST_IGNORE_DUPS           # 前と重複する行は記録しない
+setopt HIST_IGNORE_ALL_DUPS       # 履歴中の重複行をファイル記録前に無くす
+setopt HIST_IGNORE_SPACE          # 行頭がスペースのコマンドは記録しない
+setopt HIST_FIND_NO_DUPS          # 履歴検索中、(連続してなくとも)重複を飛ばす
+setopt HIST_REDUCE_BLANKS         # 余分な空白は詰めて記録
+setopt HIST_NO_STORE              # histroyコマンドは記録しない
+
 
 # プロンプト
 # 1行表示
