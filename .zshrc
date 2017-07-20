@@ -161,6 +161,7 @@ alias cd..='cd ..'
 
 alias ga='git add .'
 alias gc='git commit -m'
+alias gca='git commit --amend'
 
 alias gb='git branch'
 alias gbd='git branch -d'
@@ -181,6 +182,9 @@ alias grh2='git reset --hard @~'
 
 alias grbi='git rebase -i'
 
+# directory
+alias wt='~/work/test'
+alias wg='~/work/gitRepository'
 
 # python alias
 alias pyrn='python manage.py runserver 0.0.0.0:8080'
