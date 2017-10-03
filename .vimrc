@@ -23,7 +23,6 @@ nmap - $
 " vitualモード中にctrl+Jで、escを押したことにする
 vmap <C-j> <esc>
 
-
 " 見た目系
 " 行番号を表示
 set number
@@ -47,11 +46,16 @@ nnoremap k gk
 
 
 " Tab系
-" 不可視文字を可視化(タブが「▸-」と表示される)
-set list listchars=tab:\▸\-
+" " 不可視文字を可視化(タブが「▸-」と表示される)
+" set list listchars=tab:\▸\-
 " 行頭以外のTab文字の表示幅（スペースいくつ分）
+" set tabstop=2
+" " 行頭でのTab文字の表示幅
+" set shiftwidth=2
+
 set tabstop=2
-" 行頭でのTab文字の表示幅
+set autoindent
+set expandtab
 set shiftwidth=2
 
 

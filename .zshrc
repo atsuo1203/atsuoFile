@@ -157,11 +157,14 @@ alias mkdir='mkdir -p'
 
 alias cd..='cd ..'
 
+alias mosquitto='/usr/local/opt/mosquitto/sbin/mosquitto'
+
 # git エイリアス
 
 alias ga='git add .'
 alias gc='git commit -m'
 alias gca='git commit --amend'
+alias gcane='git commit -a --amend --no-edit'
 
 alias gb='git branch'
 alias gbd='git branch -d'
@@ -182,6 +185,9 @@ alias grh2='git reset --hard @~'
 
 alias grbi='git rebase -i'
 
+alias gs='git stash'
+alias gsp='git stash pop'
+
 # directory
 alias wt='~/work/test'
 alias wg='~/work/gitRepository'
@@ -198,6 +204,10 @@ alias sudo='sudo '
 # グローバルエイリアス
 alias -g L='| less'
 alias -g G='| grep'
+
+# 趣味エイリアス
+alias kyoko='open ~/Pictures/ゆるゆり/kyoko.jpg'
+alias ryosuke='sh ~/work/slack/test.sh'
 
 # C で標準出力をクリップボードにコピーする
 # mollifier delta blog : http://mollifier.hatenablog.com/entry/20100317/p1

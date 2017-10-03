@@ -1,9 +1,9 @@
 [user]
 	name = atsuo1203 
-	email = atsuo@cps.im.dendai.ac.jp
+	email = dondonkitemasu@gmail.com
 [core]
 	editor = vim -c \"set fenc=utf-8\"
-	excludefile = /Users/atsuo/.gitignore
+	excludesfile = /Users/atsuo/.gitignore_global
 [color]
 	diff = auto
 	status = auto
