@@ -66,6 +66,7 @@ setopt HIST_IGNORE_SPACE          # 行頭がスペースのコマンドは記�
 setopt HIST_FIND_NO_DUPS          # 履歴検索中、(連続してなくとも)重複を飛ばす
 setopt HIST_REDUCE_BLANKS         # 余分な空白は詰めて記録
 setopt HIST_NO_STORE              # histroyコマンドは記録しない
+setopt HIST_EXPIRE_DUPS_FIRST
 
 
 # プロンプト
@@ -148,19 +149,17 @@ setopt extended_glob
 ########################################
 # エイリアス
 
+## コマンド系
 alias la='ls -a'
 alias ll='ls -l'
-
 alias mv='mv -i'
-
 alias mkdir='mkdir -p'
-
 alias cd..='cd ..'
 
+## mosquitto
 alias mosquitto='/usr/local/opt/mosquitto/sbin/mosquitto'
 
-# git エイリアス
-
+## git
 alias ga='git add .'
 alias gc='git commit -m'
 alias gca='git commit --amend'
@@ -173,11 +172,9 @@ alias gbD='git branch -D'
 alias gco='git checkout'
 alias gcob='git checkout -b'
 
-alias gps='git push'
 alias gpom='git push origin master'
 alias gpoh='git push origin HEAD'
 alias gpomf='git push -f origin master'
-alias gpl='git pull'
 
 alias grh='git reset --hard'
 alias grs='git reset --soft'
@@ -188,26 +185,30 @@ alias grbi='git rebase -i'
 alias gs='git stash'
 alias gsp='git stash pop'
 
-# directory
+## directory
 alias wt='~/work/test'
 alias wg='~/work/gitRepository'
 
-# python alias
+## python
 alias pyrn='python manage.py runserver 0.0.0.0:8080'
 alias pymake='python manage.py makemigrations '
 alias pymakeg='python manage.py makemigrations general'
 alias pymig='python manage.py migrate'
 alias pycsu='python manage.py createsuperuser'
-# sudo の後のコマンドでエイリアスを有効にする
+
+## sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
 
-# グローバルエイリアス
+## グローバル
 alias -g L='| less'
 alias -g G='| grep'
 
-# 趣味エイリアス
+## 趣味
 alias kyoko='open ~/Pictures/ゆるゆり/kyoko.jpg'
-alias ryosuke='sh ~/work/slack/test.sh'
+
+## 便利
+alias flt='sh ~/work/test/testSh/flask_tutorial/flask_tutorial.sh'
+alias pipDelete='sh ~//work/test/testSh/pip_delete/pip_delete.sh'
 
 # C で標準出力をクリップボードにコピーする
 # mollifier delta blog : http://mollifier.hatenablog.com/entry/20100317/p1
