@@ -188,6 +188,7 @@ alias gsp='git stash pop'
 ## directory
 alias wt='~/work/test'
 alias wg='~/work/gitRepository'
+alias wga='~/work/gitRepository/atsuo'
 
 ## python
 alias pyrn='python manage.py runserver 0.0.0.0:8080'
@@ -206,9 +207,26 @@ alias -g G='| grep'
 ## 趣味
 alias kyoko='open ~/Pictures/ゆるゆり/kyoko.jpg'
 
-## 便利
-alias flt='sh ~/work/test/testSh/flask_tutorial/flask_tutorial.sh'
-alias pipDelete='sh ~//work/test/testSh/pip_delete/pip_delete.sh'
+# 便利シェルスクリプト
+## pipの中身を全部消す
+pipDelete() {
+  touch pip_delete_list.txt
+  pip freeze > pip_delete_list.txt
+  pip uninstall -r pip_delete_list.txt
+  rm pip_delete_list.txt
+}
+
+## flask_tutorialを作成する
+flt(){
+  cp -rf ~/work/samples/flask_sample/ ./
+  rm requirements.txt
+  touch requirements.txt
+  echo Flask >> requirements.txt
+  echo Flask-SQLAlchemy >> requirements.txt
+  pip install -r requirements.txt
+  python create_db.py
+  pip freeze -l > requirements.txt
+}
 
 # C で標準出力をクリップボードにコピーする
 # mollifier delta blog : http://mollifier.hatenablog.com/entry/20100317/p1
