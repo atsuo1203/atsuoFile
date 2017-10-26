@@ -187,8 +187,9 @@ alias gsp='git stash pop'
 
 ## directory
 alias wt='~/work/test'
+alias ws='~/work/samples'
 alias wg='~/work/gitRepository'
-alias wga='~/work/gitRepository/atsuo'
+alias wa='~/work/gitRepository/atsuo'
 
 ## python
 alias pyrn='python manage.py runserver 0.0.0.0:8080'
@@ -206,6 +207,9 @@ alias -g G='| grep'
 
 ## 趣味
 alias kyoko='open ~/Pictures/ゆるゆり/kyoko.jpg'
+
+## terminal 更新
+alias relogin='exec $SHELL -l'
 
 # 便利シェルスクリプト
 ## pipの中身を全部消す
@@ -226,6 +230,12 @@ flt(){
   pip install -r requirements.txt
   python create_db.py
   pip freeze -l > requirements.txt
+}
+
+## zsh_historyの中身を整理
+agh(){
+  python arrange_zsh_history.py
+  relogin
 }
 
 # C で標準出力をクリップボードにコピーする
