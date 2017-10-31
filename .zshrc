@@ -214,18 +214,14 @@ alias relogin='exec $SHELL -l'
 # 便利シェルスクリプト
 ## pipの中身を全部消す
 pipDelete() {
-  touch pip_delete_list.txt
-  pip freeze > pip_delete_list.txt
-  pip uninstall -r pip_delete_list.txt
-  rm pip_delete_list.txt
+  pip freeze |  xargs pip uninstall -y
 }
 
 ## flask_tutorialを作成する
 flt(){
   cp -rf ~/work/samples/flask_sample/ ./
-  rm requirements.txt
   touch requirements.txt
-  echo Flask >> requirements.txt
+  echo Flask > requirements.txt
   echo Flask-SQLAlchemy >> requirements.txt
   pip install -r requirements.txt
   python create_db.py
@@ -233,8 +229,8 @@ flt(){
 }
 
 ## zsh_historyの中身を整理
-agh(){
-  python arrange_zsh_history.py
+azh(){
+  python ~/arrange_zsh_history.py
   relogin
 }
 
