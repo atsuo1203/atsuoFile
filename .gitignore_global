@@ -8,3 +8,4 @@ __pycache__/
 .rsync_excluded
 atsuoTest.py
 atsuoTest.txt
+atsuoTest.md
