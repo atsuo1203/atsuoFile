@@ -206,7 +206,7 @@ alias -g L='| less'
 alias -g G='| grep'
 
 ## 趣味
-alias kyoko='open ~/Pictures/ゆるゆり/kyoko.jpg'
+alias kyoko='imgcat ~/Pictures/ゆるゆり/kyoko.jpg'
 
 ## terminal 更新
 alias relogin='exec $SHELL -l'
