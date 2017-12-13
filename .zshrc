@@ -7,12 +7,15 @@ prompt pure
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
-zplug "mollifier/anyframe"
-zplug "zsh-users/zsh-completions"
+zplug "mollifier/anyframe", defer:2
+zplug "zsh-users/zsh-completions", defer:2
 zplug "zsh-users/zsh-autosuggestions", defer:2
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "zsh-users/zsh-history-substring-search"
-zplug "mrowa44/emojify"
+zplug "zsh-users/zsh-history-substring-search", defer:2
+zplug "mrowa44/emojify", defer:2
+
+bindkey "^[[A" history-substring-search-up
+bindkey "^[[B" history-substring-search-down
 
 zplug load
 
