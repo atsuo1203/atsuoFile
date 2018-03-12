@@ -10,3 +10,6 @@ atsuoTest.py
 atsuoTest.txt
 atsuoTest.md
 atsuoTest.yaml
+atsuoTest.sh
+.idea
+venv

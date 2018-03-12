@@ -19,6 +19,7 @@ bindkey "^[[B" history-substring-search-down
 
 zplug load
 
+
 # javaの環境設定
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 

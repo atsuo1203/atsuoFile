@@ -74,4 +74,5 @@ set hlsearch
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 "自分で追加した所
 set clipboard+=unnamed
-" vim:set ft=vim:
+" "アルファベットインクリメント
+" set nf=alpha
