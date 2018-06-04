@@ -44,6 +44,9 @@ eval "$(rbenv init -)"
 # 環境変数
 export LANG=ja_JP.UTF-8
 
+# PostgreSQL
+export PGDATA=/usr/local/var/postgres
+
 ## peco
 function peco-select-history() {
     local tac
