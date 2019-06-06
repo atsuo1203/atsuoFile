@@ -74,6 +74,8 @@ zle -N peco-select-history
 
 bindkey '^R' peco-select-history
 
+### nodebrew
+export PATH=$HOME/.nodebrew/current/bin:$PATH
 # ヒストリの設定
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
