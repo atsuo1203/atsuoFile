@@ -9,6 +9,7 @@ function loadlib() {
 }
 
 loadlib ./reactIncRc.sh
+eval "$(direnv hook zsh)"
 
 # pureの設定
 autoload -U promptinit; promptinit
@@ -46,8 +47,8 @@ source ~/.nvm/nvm.sh
 
 # node_modules
 #export NODE_PATH= ~/node_modules
-export PATH=$PATH:./node_modules/.bin
-
+#export PATH=$PATH:./node_modules/.bin
+export PATH=$HOME/.nodebrew/current/bin:$PATH
 #ruby
 export PATH="$HOME/.rbenv/shims:$PATH"
 eval "$(rbenv init -)"
@@ -74,8 +75,6 @@ zle -N peco-select-history
 
 bindkey '^R' peco-select-history
 
-### nodebrew
-export PATH=$HOME/.nodebrew/current/bin:$PATH
 # ヒストリの設定
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
@@ -176,6 +175,9 @@ alias mv='mv -i'
 alias mkdir='mkdir -p'
 alias cd..='cd ..'
 
+# path
+alias path='echo $PATH | perl -pe "s/:/\n/g"'
+
 ## mosquitto
 alias mosquitto='/usr/local/opt/mosquitto/sbin/mosquitto'
 
@@ -210,6 +212,7 @@ alias wt='~/work/test'
 alias ws='~/work/samples'
 alias wg='~/work/gitRepository'
 alias wa='~/work/gitRepository/atsuo'
+alias tdu='/Volumes/授業用ワークスペース/千住キャンパス'
 
 ## python
 alias pyrn='python manage.py runserver 0.0.0.0:8080'
