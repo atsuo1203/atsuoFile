@@ -13,6 +13,8 @@ set hidden
 set showcmd
 " バックスペース
 set backspace=indent,eol,start
+" 消音
+set vb t_vb=
 
 " ハイライト
 syntax on
@@ -74,5 +76,5 @@ set hlsearch
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 "自分で追加した所
 set clipboard+=unnamed
-" "アルファベットインクリメント
-" set nf=alpha
+"8進数→10進数"
+set nf=""
