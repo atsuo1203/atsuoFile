@@ -1,5 +1,11 @@
 # 宏郎のzshrc
 
+# kenshu
+export MYSQL_HOST=localhost:3306
+export MYSQL_USER=root
+export MYSQL_PASSWORD=pass
+export MYSQL_DB=sampledb
+
 # 他のファイルを読み込む
 function loadlib() {
    lib=${1:?"You have to specify a library file"}
@@ -9,7 +15,6 @@ function loadlib() {
 }
 
 loadlib ./reactIncRc.sh
-eval "$(direnv hook zsh)"
 
 # pureの設定
 autoload -U promptinit; promptinit
@@ -47,12 +52,20 @@ source ~/.nvm/nvm.sh
 
 # node_modules
 #export NODE_PATH= ~/node_modules
-#export PATH=$PATH:./node_modules/.bin
-export PATH=$HOME/.nodebrew/current/bin:$PATH
+export PATH=$PATH:./node_modules/.bin
+
 #ruby
 export PATH="$HOME/.rbenv/shims:$PATH"
 eval "$(rbenv init -)"
 ########################################
+
+#go
+export GOPATH="$HOME/go/1.13.10"
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+eval "$(goenv init -)"
+export PATH="$PATH:$GOPATH/bin"
+
 # 環境変数
 export LANG=ja_JP.UTF-8
 
@@ -74,6 +87,13 @@ function peco-select-history() {
 zle -N peco-select-history
 
 bindkey '^R' peco-select-history
+
+### nodebrew
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+# gcp
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 
 # ヒストリの設定
 HISTFILE=~/.zsh_history
@@ -171,12 +191,10 @@ setopt extended_glob
 ## コマンド系
 alias la='ls -a'
 alias ll='ls -l'
+alias lla='ls -la'
 alias mv='mv -i'
 alias mkdir='mkdir -p'
 alias cd..='cd ..'
-
-# path
-alias path='echo $PATH | perl -pe "s/:/\n/g"'
 
 ## mosquitto
 alias mosquitto='/usr/local/opt/mosquitto/sbin/mosquitto'
@@ -207,12 +225,13 @@ alias grbi='git rebase -i'
 alias gs='git stash'
 alias gsp='git stash pop'
 
+export PATH="/usr/local/bin:$PATH"
+
 ## directory
-alias wt='~/work/test'
+alias wk='~/work'
+alias wt='~/work/tapple'
 alias ws='~/work/samples'
-alias wg='~/work/gitRepository'
-alias wa='~/work/gitRepository/atsuo'
-alias tdu='/Volumes/授業用ワークスペース/千住キャンパス'
+alias wa='~/work/atsuo'
 
 ## python
 alias pyrn='python manage.py runserver 0.0.0.0:8080'
@@ -287,6 +306,7 @@ case ${OSTYPE} in
 esac
 
 
-export NVM_DIR="/Users/atsuo/.nvm"
+export NVM_DIR="~/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 # vim:set ft=zsh:
+eval "$(direnv hook zsh)"
