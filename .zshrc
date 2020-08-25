@@ -60,7 +60,6 @@ eval "$(rbenv init -)"
 ########################################
 
 #go
-export GOPATH="$HOME/go/1.13.10"
 export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
 eval "$(goenv init -)"
@@ -92,8 +91,8 @@ bindkey '^R' peco-select-history
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 # gcp
-source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
-source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+# source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+# source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 
 # ヒストリの設定
 HISTFILE=~/.zsh_history
