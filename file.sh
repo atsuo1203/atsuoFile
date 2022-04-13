@@ -6,4 +6,5 @@ cp .tigrc ~/
 cp .zshrc ~/
 cp .gvimrc ~/
 cp .vimrc ~/
+cp Brewfile ~/
 cp arrange_zsh_history.py ~/
