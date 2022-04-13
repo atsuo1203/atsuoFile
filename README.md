@@ -7,9 +7,11 @@
 * .tigrc
 
 # usage
+```
 $ sh file.sh
 $ cd
 $ brew bundle
 $ zplug install
 $ nodebrew setup
 $ npm install --global pure-prompt
+```
