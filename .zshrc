@@ -1,27 +1,42 @@
 # 宏郎のzshrc
 
-# kenshu
-export MYSQL_HOST=localhost:3306
-export MYSQL_USER=root
-export MYSQL_PASSWORD=pass
-export MYSQL_DB=sampledb
+# homebrewの設定
+# https://zenn.dev/sprout2000/articles/bd1fac2f3f83bc
+# ↓m1m2mac以外ではやらない
+typeset -U path PATH
+path=(
+  /opt/homebrew/bin(N-/)
+  /opt/homebrew/sbin(N-/)
+  /usr/bin
+  /usr/sbin
+  /bin
+  /sbin
+  /usr/local/bin(N-/)
+  /usr/local/sbin(N-/)
+  /Library/Apple/usr/bin
+)
 
-# 他のファイルを読み込む
-function loadlib() {
-   lib=${1:?"You have to specify a library file"}
-   if [ -f "$lib" ];then #ファイルの存在を確認
-           . "$lib"
-   fi
-}
 
-loadlib ./reactIncRc.sh
+# # 他のファイルを読み込む
+# function loadlib() {
+#    lib=${1:?"You have to specify a library file"}
+#    if [ -f "$lib" ];then #ファイルの存在を確認
+#            . "$lib"
+#    fi
+# }
+# 
+# loadlib ./reactIncRc.sh
 
 # pureの設定
+fpath+=/opt/homebrew/share/zsh/site-functions
 autoload -U promptinit; promptinit
 prompt pure
 
 # zplugの設定
-export ZPLUG_HOME=/usr/local/opt/zplug
+# ↓ m1m2以外のmac用
+# export ZPLUG_HOME=/usr/local/opt/zplug
+# source $ZPLUG_HOME/init.zsh
+export ZPLUG_HOME=/opt/homebrew/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
 zplug "mollifier/anyframe", defer:2
@@ -37,39 +52,39 @@ bindkey "^[[B" history-substring-search-down
 zplug load
 
 
-# javaの環境設定
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
-
-#pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-source ~/.nvm/nvm.sh
+# # javaの環境設定
+# export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+# 
+# #pyenv
+# export PYENV_ROOT="$HOME/.pyenv"
+# export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
+# 
+# # nvm
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+# source ~/.nvm/nvm.sh
 
 # node_modules
 #export NODE_PATH= ~/node_modules
 export PATH=$PATH:./node_modules/.bin
 
-#ruby
-export PATH="$HOME/.rbenv/shims:$PATH"
-eval "$(rbenv init -)"
-########################################
-
-#go
-export GOENV_ROOT="$HOME/.goenv"
-export PATH="$GOENV_ROOT/bin:$PATH"
-eval "$(goenv init -)"
-export PATH="$PATH:$GOPATH/bin"
+# #ruby
+# export PATH="$HOME/.rbenv/shims:$PATH"
+# eval "$(rbenv init -)"
+# ########################################
+# 
+# #go
+# export GOENV_ROOT="$HOME/.goenv"
+# export PATH="$GOENV_ROOT/bin:$PATH"
+# eval "$(goenv init -)"
+# export PATH="$PATH:$GOPATH/bin"
 
 # 環境変数
 export LANG=ja_JP.UTF-8
 
-# PostgreSQL
-export PGDATA=/usr/local/var/postgres
+# # PostgreSQL
+# export PGDATA=/usr/local/var/postgres
 
 ## peco
 function peco-select-history() {
@@ -224,12 +239,6 @@ alias gs='git stash'
 alias gsp='git stash pop'
 
 export PATH="/usr/local/bin:$PATH"
-
-## directory
-alias wk='~/work'
-alias wt='~/work/tapple'
-alias ws='~/work/samples'
-alias wa='~/work/atsuo'
 
 ## python
 alias pyrn='python manage.py runserver 0.0.0.0:8080'
