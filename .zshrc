@@ -211,9 +211,8 @@ alias gbD='git branch -D'
 alias gco='git checkout'
 alias gcob='git checkout -b'
 
-alias gpom='git push origin master'
+alias gpom='git push origin main'
 alias gpoh='git push origin HEAD'
-alias gpomf='git push -f origin master'
 
 alias grh='git reset --hard'
 alias grs='git reset --soft'
